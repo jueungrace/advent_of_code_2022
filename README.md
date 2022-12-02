@@ -1,12 +1,12 @@
-# Elliott's Advent of Code 2022 Solutions
+# Grace's Advent of Code 2022 Solutions
 
-Template stolen from [Eric's Advent of Code 2022 Solutions](https://github.com/ericwburden/advent_of_code_2022) and modified to suit my needs. Astute readers may notice my first day's solution is exactly identical to his. Prior to discovering his great template, I implemented my own solution which turned out to be very similar to his. Rather than try to port my solution over with my now-polluted-by-Eric's-solution mind, I just left his as tribute to him.
+Template stolen from Elliott's modified version of [Eric's Advent of Code 2022 Solutions](https://github.com/ericwburden/advent_of_code_2022).
 
 ## Project Structure
 
-This year, I'm using Rust! I solved 2019's puzzles in Rust after the fact (it's how I
-learned Rust to begin with), but this year I'll solve each day in Rust first. I've 
-set up folders for each day's code and input files like so:
+I'm currently learning Rust and am challenging myself to solve this year's AOC using only Rust. 
+
+Folder set up for each day's code and input files:
 
 ```
 <project root>
@@ -55,5 +55,3 @@ There are a few organizational notes to point out here:
   - `cargo test` to run the tests. Full documentation for that command [here](https://doc.rust-lang.org/cargo/commands/cargo-test.html)
   - `cargo bench` to run the benchmarks. Full documentation for that command [here](https://bheisler.github.io/criterion.rs/book/user_guide/command_line_options.html)
   - `cargo run` to run the first day's solutions and print the results. `cargo run <number>` to run the <number> day's solutions and print the results.
-
- 

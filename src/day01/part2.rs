@@ -1,6 +1,9 @@
 use crate::day01::{Input, Output};
 
-/// Solve Day 01, Part 02
+// asterisk (*) - dereferences, allows access to referred-to value
+// & - immutable reference
+// &mut - mutable reference 
+
 pub fn solve(input: &Input) -> Output {
     // A running total of the top three values for total
     // Elf calories found so far, descending from left to

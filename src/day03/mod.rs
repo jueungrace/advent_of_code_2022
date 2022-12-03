@@ -2,9 +2,11 @@ pub mod input;
 pub mod part1;
 pub mod part2;
 
+use std::collections::HashMap;
+
 use crate::{Output, Part};
 
-pub type Input = u8;
+pub type Input = Vec<(HashMap<char, usize>, HashMap<char, usize>)>;
 
 pub fn run(part: Part) -> Output {
     let input = match part {

@@ -12,8 +12,23 @@ pub fn read_example() -> Input {
 }
 
 pub fn read_internal(input: &str) -> Input {
-    unimplemented!()
+    input
+        .split("\n") 
+        .map(get_pair_ranges) 
+        .collect()
 }
+
+pub fn get_pair_ranges(pair: &str) -> Vec<Vec<usize>> {
+    pair
+        .split(",") 
+        .map(|range| parse_string_pair_to_num(&mut range.split("-").collect())) // [['71', '71'], ['42', '72']]
+        .collect() 
+}
+
+pub fn parse_string_pair_to_num(str_pair: &mut Vec<&str>) -> Vec<usize> {
+    (str_pair.iter().map(|s| s.parse().unwrap()).collect())
+}
+
 
 #[cfg(test)]
 mod test {

@@ -36,7 +36,7 @@ pub fn format_stacks(rows: &str) -> Vec<Vec<char>> {
         }
     }
    
-    stacks.iter_mut().for_each(|s| s.reverse());
+    // stacks.iter_mut().for_each(|s| s.reverse());
     (stacks)
 }
 

@@ -13,8 +13,8 @@ pub fn run(part: Part) -> Output {
     };
 
     match part {
-        Part::ExampleOne | Part::One => part1::solve(&input),
-        Part::ExampleTwo | Part::Two => part2::solve(&input),
+        Part::ExampleOne | Part::One => part1::solve(input),
+        Part::ExampleTwo | Part::Two => part2::solve(input),
     }
 }
 

@@ -4,7 +4,15 @@ pub mod part2;
 
 use crate::{Output, Part};
 
-pub type Input = u8;
+#[derive(Debug)]
+pub enum Direction {
+    Up,
+    Right,
+    Down,
+    Left
+}
+
+pub type Input = Vec<(Direction, u16)>;
 
 pub fn run(part: Part) -> Output {
     let input = match part {

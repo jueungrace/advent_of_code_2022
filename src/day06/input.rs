@@ -12,7 +12,7 @@ pub fn read_example() -> Input {
 }
 
 pub fn read_internal(input: &str) -> Input {
-    unimplemented!()
+    input.trim().chars().collect()
 }
 
 #[cfg(test)]

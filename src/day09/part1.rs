@@ -100,7 +100,6 @@ pub enum NextStep {
     Stay 
 }
 
-// TODO: refactor to consider when a diff knot is already in that spot
 pub fn are_touching(head: (i64, i64), tail: (i64, i64)) -> NextStep {
     // Are they at least in the same row or col?
     if head.0 == tail.0 || head.1 == tail.1 {

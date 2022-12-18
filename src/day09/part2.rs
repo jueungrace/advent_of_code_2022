@@ -58,6 +58,7 @@ pub fn solve(input: &Input) -> Output {
 
 pub fn check_knots(knots: &mut Vec<(i64, i64)>, direction: &Direction) {
     let mut index = 0;
+    let mut prev_direction: &Direction = direction;
 
     while index < KNOTS - 1 {
         // println!("{:?}, {:?}", knots[index], knots[index+1]);
@@ -86,12 +87,18 @@ pub fn check_knots(knots: &mut Vec<(i64, i64)>, direction: &Direction) {
                 }
             }, 
             NextStep::SameDirection => {
-                match direction {
-                    Direction::Down => knots[index+1].1 -= 1,
-                    Direction::Left => knots[index+1].0 -= 1,
-                    Direction::Right => knots[index+1].0 += 1,
-                    Direction::Up => knots[index+1].1 += 1
-                };
+                // Current is to the right of next:
+                if knots[index].0 - knots[index+1].0 == 2 {
+                    knots[index+1].0 += 1;
+                } else if knots[index+1].0 - knots[index].0 == 2 {
+                    // Current is to the left of next:
+                    knots[index+1].0 -= 1;
+                } else if knots[index].1 - knots[index+1].1 == 2 {
+                    // Current is above next:
+                    knots[index+1].1 += 1;
+                } else {
+                    knots[index+1].1 -= 1;
+                }
             },
             NextStep::Stay => {
                 index += 1;
@@ -102,4 +109,6 @@ pub fn check_knots(knots: &mut Vec<(i64, i64)>, direction: &Direction) {
 
         index += 1;
     }
+
+    println!("{:?}", knots);
 }
